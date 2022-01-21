@@ -15,4 +15,5 @@ jobs:
       - run: echo "testfile" > ~/cache/log.txt
       - save_cache:
           key: v1-dependencies-
-          paths: ~/cache
+          paths: 
+            - ~/cache
