@@ -1,2 +1,2 @@
-# Training-Level-1
-Koans Training Level 1
+# Training-Level-2
+Koans Training Level 2
