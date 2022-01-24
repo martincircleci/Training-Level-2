@@ -19,5 +19,12 @@ jobs:
           environment:
             DOCKERIZE_VERSION: v0.3.0
       - run:
+          name: Set up DB
+          command: |
+            bundle exec rake db:create db:schema:load --trace
+            bundle exec rake db:migrate
+        environment:
+          DATABASE_URL: "postgres://ubuntu@localhost:5432/db_name"
+      - run:
           name: Wait for db # If no database is found in 1 minute the job will fail.
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
