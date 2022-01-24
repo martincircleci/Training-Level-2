@@ -23,8 +23,7 @@ jobs:
       - run:
           name: Run Split Test
           command: |
-            TEST_FILES=$(circleci tests glob "bash src/*.sh" | circleci tests split > /tmp/tests-to-run
-            bundle exec rspec $(cat /tmp/tests-to-run) )
+            TEST_FILES=$(circleci tests glob "bash src/*.sh" | circleci tests split > /tmp/tests-to-run)
 
 workflows:
   version: 2
