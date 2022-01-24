@@ -1,19 +1,26 @@
 version: 2
 jobs:
   test:
+    parallelism: 2
     docker:
       - image: circleci/node
     steps:
       - checkout
       # These two tests should run in parallel. Make it so!
+      #- run:
+          #name: Run Hello test
+          #command: |
+            #bash src/test_hello.sh
+      #- run:
+          #name: Run Goodbye test
+          #command: |
+            #bash src/test_goodbye.sh
       - run:
-          name: Run Hello test
+          name: Split test
           command: |
-            bash src/test_hello.sh
-      - run:
-          name: Run Goodbye test
-          command: |
-            bash src/test_goodbye.sh
+            circleci tests glob "src/*.sh" | circleci tests split > /tmp/tests-to-run
+            bundle exec rspec $(cat /tmp/tests-to-run)
+
 workflows:
   version: 2
   test:
