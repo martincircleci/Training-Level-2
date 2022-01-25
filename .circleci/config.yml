@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   # Add Orb here
+  ruby: circleci/ruby@1.4.0
 
 jobs:
   build:
@@ -10,8 +11,8 @@ jobs:
     steps:
       - checkout
       # Add step below to install Ruby version 2.6.3
-
-
+      - ruby/install:
+          version: '2.7'
       - run: ruby -v
 
 workflows:
