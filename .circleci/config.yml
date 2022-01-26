@@ -31,3 +31,8 @@ workflows:
       - deploy:
           requires:
             - test-production
+          filters:
+            branches:
+              only: production
+            tags:
+              ignore: /.*/
