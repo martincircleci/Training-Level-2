@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   runner:
     machine: true
-    resource-class: martincircleci-namespace/small
+    resource_class: martincircleci-namespace/small
     steps:
       - run: echo "Hi I'm on Runners!"
 
