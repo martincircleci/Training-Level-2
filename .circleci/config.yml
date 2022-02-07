@@ -9,7 +9,7 @@ jobs:
     
   runnertwo:
     machine: true
-    resource_class: circleci/whiskey
+    resource_class: martincircleci-namespace/martin
     steps:
       - run: echo "Runner two"
 
