@@ -6,8 +6,15 @@ jobs:
     resource_class: martincircleci-namespace/small
     steps:
       - run: echo "Hi I'm on Runners!"
+    
+  runnertwo:
+    machine: true
+    resource_class: circleci/whiskey
+    steps:
+      - run: echo "Runner two"
 
 workflows:
   testing:
     jobs:
       - runner
+      - runnertwo
