@@ -2,8 +2,7 @@ version: 2.1
 
 jobs:
   runner:
-    docker:
-      - image: circleci/node
+    machine: true
     resource_class: martincircleci-namespace/small
     steps:
       - run: echo "Hi I'm on Runners!"
