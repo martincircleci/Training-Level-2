@@ -11,8 +11,8 @@ jobs:
         - run: cd ~/project/app && pwd && ls
           # Edit below here
         - persist_to_workspace:
-            root:
-            paths:
+            root: /tmp
+            paths: /tmp/artifacts
 
   build-windows:
     docker:
@@ -25,8 +25,8 @@ jobs:
         - run: cd ~/project/app && pwd && ls
           # Edit below here
         - persist_to_workspace:
-            root:
-            paths:
+            root: /tmp
+            paths: /tmp/artifacts
 
   build-mac:
       docker:
@@ -39,8 +39,8 @@ jobs:
         - run: cd ~/project/app && pwd && ls
           # Edit below here
         - persist_to_workspace:
-            root:
-            paths:
+            root: /tmp
+            paths: /tmp/artifacts
 
   deploy:
       docker:
