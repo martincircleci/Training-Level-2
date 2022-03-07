@@ -11,8 +11,8 @@ jobs:
         - run: cd ~/project/app && pwd && ls
           # Edit below here
         - persist_to_workspace:
-            root: /tmp
-            paths: /artifacts
+            root: /
+            paths: ~/app/linux
 
   build-windows:
     docker:
