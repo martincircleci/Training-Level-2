@@ -12,8 +12,8 @@ jobs:
           # Edit below here
         - run: pwd
         - persist_to_workspace:
-            root: /linux
-            paths: /linux
+            root: ~/project/app/linux
+            paths: ~/project/app/linux
 
   build-windows:
     docker:
