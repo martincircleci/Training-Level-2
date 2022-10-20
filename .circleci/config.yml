@@ -20,6 +20,9 @@ jobs:
           key: my-app-cache
           paths:
             - ~/.cache/yarn
+      - run:
+            name: Test 
+            command: cp /home/circleci/.cache/yarn /home/circleci/test${CIRCLE_NODE_INDEX}
 
 workflows:
   cache-save-and-restore:
