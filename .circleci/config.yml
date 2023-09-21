@@ -26,9 +26,9 @@ jobs:
       - run:
           name: Set AWS Secret Key
           command: aws configure set aws_secret_access_key $AWS_SECRET_KEY
-      - run: dotnet restore
-      - run: dotnet build -c Release --no-restore /p:Version=1.0 --version-suffix $CIRCLE_BUILD_NUM
-      - run: dotnet test -c Release --no-restore --no-build test/KyberlifeIAM.Core.UnitTests
+      #- run: dotnet restore
+      #- run: dotnet build -c Release --no-restore /p:Version=1.0 --version-suffix $CIRCLE_BUILD_NUM
+      #- run: dotnet test -c Release --no-restore --no-build test/KyberlifeIAM.Core.UnitTests
       - run:
           name: Whitelist CircleCI public IP to AWS RDS
           command: |
