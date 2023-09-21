@@ -19,7 +19,7 @@ jobs:
       #       sed -i 's/GITHUB_PASSWORD/'$GITHUB_PASSWORD'/g' nuget.config
       - run:
           name: Set Default AWS Region
-          command: aws configure set default.region $AWS_REGION
+          command: aws configure set default.region us-east-2
       - run:
           name: Set AWS Access Key
           command: aws configure set aws_access_key_id $AWS_ACCESS_KEY
